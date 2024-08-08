@@ -7,8 +7,9 @@
   
   /* Global styles */
   body {
-    font-family: 'Martel', serif;
+    font-family: 'Rajdhani', sans-serif;
     color: #333;
+    background-color: #f8f8f8;
   }
   
   a {
@@ -22,7 +23,7 @@
   
   /* Header styles */
   header {
-    background-color: #f2f2f2;
+    background-color: #fff;
     padding: 1rem;
     position: sticky;
     top: 0;
@@ -54,7 +55,7 @@
   }
   
   nav ul li a {
-    font-family: 'Amita', cursive;
+    font-family: 'Prata', serif;
     font-size: 1.3rem;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -64,8 +65,7 @@
     color: #8b4513;
   }
   
-  /* Cart Icon and Chain Styles */
-.cart-icon {
+  .cart-icon {
     display: flex;
     align-items: center;
     font-size: 1.4rem;
@@ -98,30 +98,16 @@
     transform: scale(1.2);
   }
   
-  .wishlist-icon {
-    margin-left: 1rem;
-    position: relative;
-  }
-  
-  .wishlist-toggle {
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-  
-  .wishlist-toggle:hover {
-    color: #8b4513;
-  }
-  
   .chain-container {
     position: absolute;
     top: 50%;
-    left: -2rem;
+    left: 0.5rem;
     transform: translateY(-50%);
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     overflow: hidden;
     transition: width 0.3s ease;
+    cursor: pointer;
   }
   
   .chain-container:hover {
@@ -134,21 +120,45 @@
     left: 0;
     transform: translateY(-50%);
     width: 100%;
-    height: 2px;
-    background-color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     animation: chainAnimation 2s linear infinite;
-    transform-origin: left center;
+  }
+  
+  .chain-link {
+    width: 0.5rem;
+    height: 1rem;
+    background-color: #8b4513;
+    border-radius: 0.25rem;
+    margin: 0.25rem 0;
+    transform-origin: center;
+    animation: chainLinkAnimation 2s linear infinite;
   }
   
   @keyframes chainAnimation {
     0% {
-      transform: translateX(0) translateY(-50%) rotate(0deg);
+      transform: translateY(-50%);
     }
     50% {
-      transform: translateX(100%) translateY(-50%) rotate(180deg);
+      transform: translateY(-40%);
     }
     100% {
-      transform: translateX(0) translateY(-50%) rotate(360deg);
+      transform: translateY(-50%);
+    }
+  }
+  
+  @keyframes chainLinkAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
   
@@ -157,7 +167,7 @@
     top: 50%;
     left: -8rem;
     transform: translateY(-50%);
-    background-color: #f2f2f2;
+    background-color: #fff;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -166,7 +176,7 @@
     transition: opacity 0.3s ease, visibility 0.3s ease, left 0.3s ease;
   }
   
-  .wishlist-icon:hover .add-to-cart-container {
+  .add-to-cart-container.show {
     opacity: 1;
     visibility: visible;
     left: -6rem;
@@ -200,7 +210,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f2f2f2;
+    background-color: #fff;
     padding: 4rem 2rem;
     overflow: hidden;
   }
@@ -210,6 +220,17 @@
     opacity: 0;
     transform: translateX(-50px);
     animation: fadeInLeft 0.5s ease forwards;
+  }
+  
+  .hero-content h1 {
+    font-family: 'Prata', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
   }
   
   .hero-image {
@@ -228,10 +249,11 @@
   
   .featured-products {
     padding: 4rem 2rem;
+    background-color: #f8f8f8;
   }
   
   .featured-products h2 {
-    font-family: 'Amita', cursive;
+    font-family: 'Prata', serif;
     text-align: center;
     font-size: 3rem;
     margin-bottom: 2rem;
@@ -246,8 +268,55 @@
     gap: 3rem;
   }
   
+  .product-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .product-card h3 {
+    font-family: 'Prata', serif;
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .product-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 1rem 1rem;
+  }
+  
+  .product-card .add-to-cart-btn {
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 1rem auto;
+  }
+  
+  .product-card .add-to-cart-btn:hover {
+    background-color: #5e3110;
+  }
+  
   .about-india {
-    background-color: #f2f2f2;
+    background-color: #fff;
     padding: 4rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -260,6 +329,12 @@
     opacity: 0;
     transform: translateX(-50px);
     animation: fadeInLeft 0.5s ease forwards;
+  }
+  
+  .about-content h2 {
+    font-family: 'Prata', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
   }
   
   .about-image {
@@ -294,7 +369,7 @@
   }
   
   .footer-content h3 {
-    font-family: 'Amita', cursive;
+    font-family: 'Prata', serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
@@ -364,7 +439,7 @@
   }
   
   @keyframes fadeInUp {
-    0% {
+    0% {    
       opacity: 0;
       transform: translateY(50px);
     }
