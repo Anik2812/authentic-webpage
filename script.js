@@ -2,18 +2,54 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   const themeToggle = document.querySelector('.theme-toggle');
   const chain = document.querySelector('.chain');
+  const chainPull = document.querySelector('.chain-pull');
   let isDarkMode = false;
+  let isAnimating = false;
 
   themeToggle.addEventListener('click', () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
     isDarkMode = !isDarkMode;
     body.classList.toggle('dark-mode');
     
     if (isDarkMode) {
-      chain.style.top = '0';
+      animateChain(0, -80, () => {
+        isAnimating = false;
+      });
     } else {
-      chain.style.top = '-60px';
+      animateChain(-80, 0, () => {
+        isAnimating = false;
+      });
     }
   });
+
+  function animateChain(start, end, callback) {
+    const duration = 500;
+    const startTime = performance.now();
+
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = easeInOutCubic(progress);
+      const currentPosition = start + (end - start) * easeProgress;
+
+      chain.style.top = `${currentPosition}px`;
+      chainPull.style.transform = `translateX(-50%) translateY(${-currentPosition}px)`;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        callback();
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+  }
 
   const cartIcon = document.querySelector('.cart-icon');
   const cartCount = document.querySelector('.cart-count');
