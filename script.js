@@ -1,52 +1,69 @@
-// Toggle add to cart container on wishlist icon click
-const wishlistIcon = document.querySelector('.wishlist-icon');
-const addToCartContainer = document.querySelector('.add-to-cart-container');
-let isChainPulled = false;
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
+  const themeToggle = document.querySelector('.theme-toggle');
+  const chain = document.querySelector('.chain');
+  let isDarkMode = false;
 
-wishlistIcon.addEventListener('click', () => {
-  if (!isChainPulled) {
-    addToCartContainer.classList.add('show');
-    isChainPulled = true;
-    animateChain();
-  } else {
-    addToCartContainer.classList.remove('show');
-    isChainPulled = false;
-    stopChainAnimation();
-  }
-});
-
-// Add to cart functionality
-const quantityInput = document.querySelector('.quantity-input');
-const addToCartBtn = document.querySelector('.add-to-cart-btn');
-const cartCount = document.querySelector('.cart-count');
-
-let cartItems = 0;
-
-addToCartBtn.addEventListener('click', () => {
-  const quantity = parseInt(quantityInput.value);
-  cartItems += quantity;
-  cartCount.textContent = cartItems;
-  addToCartContainer.classList.remove('show');
-  isChainPulled = false;
-  stopChainAnimation();
-});
-
-// Chain animation
-let chainAnimationInterval;
-
-function animateChain() {
-  chainAnimationInterval = setInterval(() => {
-    const chainLinks = document.querySelectorAll('.chain-link');
-    chainLinks.forEach((link, index) => {
-      link.style.transform = `rotate(${index * 45}deg)`;
-    });
-  }, 500);
-}
-
-function stopChainAnimation() {
-  clearInterval(chainAnimationInterval);
-  const chainLinks = document.querySelectorAll('.chain-link');
-  chainLinks.forEach((link) => {
-    link.style.transform = 'rotate(0deg)';
+  themeToggle.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+    body.classList.toggle('dark-mode');
+    
+    if (isDarkMode) {
+      chain.style.top = '0';
+    } else {
+      chain.style.top = '-60px';
+    }
   });
-}
+
+  const cartIcon = document.querySelector('.cart-icon');
+  const cartCount = document.querySelector('.cart-count');
+  let cartItems = 0;
+
+  function updateCartCount() {
+    cartCount.textContent = cartItems;
+  }
+
+  cartIcon.addEventListener('click', () => {
+    alert('Cart functionality coming soon!');
+  });
+
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      cartItems++;
+      updateCartCount();
+      alert('Item added to cart!');
+    });
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Lazy loading for images
+  const images = document.querySelectorAll('img[data-src]');
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+        imageObserver.unobserve(img);
+      }
+    });
+  }, options);
+
+  images.forEach(img => imageObserver.observe(img));
+});
