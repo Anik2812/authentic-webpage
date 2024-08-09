@@ -9,10 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   themeToggle.addEventListener('click', () => {
     if (isAnimating) return;
     isAnimating = true;
-
     isDarkMode = !isDarkMode;
     body.classList.toggle('dark-mode');
-    
+
     if (isDarkMode) {
       animateChain(0, -80, () => {
         isAnimating = false;
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const easeProgress = easeInOutCubic(progress);
       const currentPosition = start + (end - start) * easeProgress;
 
-      chain.style.top = `${currentPosition}px`;
+      chain.style.transform = `translateY(${currentPosition}px)`;
       chainPull.style.transform = `translateX(-50%) translateY(${-currentPosition}px)`;
 
       if (progress < 1) {
@@ -51,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
   }
 
+  // Additional functionality for cart and other interactive elements
   const cartIcon = document.querySelector('.cart-icon');
   const cartCount = document.querySelector('.cart-count');
   let cartItems = 0;
