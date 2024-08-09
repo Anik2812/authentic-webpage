@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Rajdhani:wght@400;600&family=Prata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
@@ -17,152 +18,81 @@
         <img src="https://i.ibb.co/5KSCYzB/authentic-india-logo.png" alt="Authentic India">
       </div>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#featured">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="cart-icon">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count">0</span>
       </div>
       <div class="theme-toggle">
-        <div class="chain-container">
-          <div class="chain">
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-            <div class="chain-link"></div>
-          </div>
-          <div class="chain-pull"></div>
-        </div>
+        <i class="fas fa-moon"></i>
       </div>
     </nav>
   </header>
-  
+
   <main>
-    <section class="hero">
+    <section id="home" class="hero">
       <div class="hero-content">
         <h1>Discover the Magic of India</h1>
         <p>Handcrafted treasures from the heart of India</p>
+        <a href="#featured" class="cta-button">Shop Now</a>
       </div>
     </section>
 
-    <section class="featured-products">
+    <section id="featured" class="featured-products">
       <h2>Featured Products</h2>
-      <div class="container">
-        <div class="card">
-          <div class="card-inner" style="--clr:#F4B3B3;">
-            <div class="box">
-              <div class="imgBox">
-                <img src="https://images.unsplash.com/photo-1601049676869-702ea24cfd58?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Handcrafted Brass Lamp">
-              </div>
-              <div class="icon">
-                <a href="#" class="iconBox"> <span class="material-symbols-outlined">
-                    arrow_outward
-                  </span></a>
-              </div>
-            </div>
-          </div>
-          <div class="content">
-            <h3>Handcrafted Brass Lamp</h3>
-            <p>₹2,500</p>
-            <ul>
-              <li style="--clr-tag:#C34729;" class="branding">branding</li>
-              <li style="--clr-tag:#9E4429;" class="packaging">packaging</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner" style="--clr:#AK11093;">
-            <div class="box">
-              <div class="imgBox">
-                <img src="https://images.unsplash.com/photo-1613235788366-270e7ac489f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Embroidered Silk Scarf">
-              </div>
-              <div class="icon">
-                <a href="#" class="iconBox"> <span class="material-symbols-outlined">
-                    arrow_outward
-                  </span></a>
-              </div>
-            </div>
-          </div>
-          <div class="content">
-            <h3>Embroidered Silk Scarf</h3>
-            <p>₹1,200</p>
-            <ul>
-              <li style="--clr-tag:#C34729;" class="branding">branding</li>
-              <li style="--clr-tag:#2B4941;" class="marketing">marketing</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner" style="--clr:#299E7F;">
-            <div class="box">
-              <div class="imgBox">
-                <img src="https://images.unsplash.com/photo-1673847401561-fcd75a7888c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sandalwood Carving">
-              </div>
-              <div class="icon">
-                <a href="#" class="iconBox"> <span class="material-symbols-outlined">
-                    arrow_outward
-                  </span></a>
-              </div>
-            </div>
-          </div>
-          <div class="content">
-            <h3>Sandalwood Carving</h3>
-            <p>₹3,800</p>
-            <ul>
-              <li style="--clr-tag:#C34729;" class="branding">branding</li>
-              <li style="--clr-tag:#9E4429;" class="packaging">packaging</li>
-              <li style="--clr-tag:#2B4941;" class="marketing">marketing</li>
-            </ul>
-          </div>
-        </div>
+      <div class="container" id="productContainer">
+        <!-- Products will be dynamically added here -->
       </div>
     </section>
 
-    <section class="about-india">
+    <section id="about" class="about-india">
       <div class="about-content">
         <h2>Discover the Heart of India</h2>
         <p>India is a land of rich cultural heritage, vibrant traditions, and exceptional artistry. From the intricate textiles of Rajasthan to the stunning handicrafts of Kashmir, our ecommerce platform showcases the finest products that celebrate the diversity and beauty of this remarkable country.</p>
+        <a href="#" class="learn-more">Learn More</a>
       </div>
       <div class="about-image">
         <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Authentic India">
       </div>
     </section>
+
+    <section id="testimonials" class="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial-container">
+        <!-- Testimonials will be dynamically added here -->
+      </div>
+    </section>
   </main>
-  <button id="backToTop" title="Go to top">↑</button>
-  <footer>
+
+  <footer id="contact">
     <div class="footer-content">
-      <div class="about">
+      <div class="footer-section about">
         <h3>About Authentic India</h3>
         <p>Authentic India is an ecommerce platform dedicated to preserving and promoting the rich cultural legacy of India. We work closely with local artisans and communities to bring you the finest handcrafted products that embody the essence of this remarkable country.</p>
       </div>
-      <div class="newsletter">
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> info@authenticindia.com</p>
+        <p><i class="fas fa-phone"></i> +91-1234567890</p>
+      </div>
+      <div class="footer-section social-media">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section newsletter">
         <h3>Subscribe to Our Newsletter</h3>
         <form id="newsletterForm">
           <input type="email" placeholder="Enter your email" required>
           <button type="submit">Subscribe</button>
         </form>
-      </div>
-      <div class="contact">
-        <h3>Contact Us</h3>
-        <p>Email: info@authenticindia.com</p>
-        <p>Phone: +91-1234567890</p>
-      </div>
-      <div class="social-media">
-        <h3>Follow Us</h3>
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
       </div>
     </div>
     <div class="copyright">
@@ -171,6 +101,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -10,9 +10,9 @@
 }
 
 body.dark-mode {
-  --primary-color: #FF6B6B;
-  --secondary-color: #4ECDC4;
-  --accent-color: #45B7D1;
+  --primary-color: #002028;
+  --secondary-color: #020800;
+  --accent-color: #DB6058;
   --text-color: #F7FFF7;
   --background-color: #2C3E50;
   --card-background: #34495E;
@@ -521,4 +521,71 @@ footer {
   .featured-products h2 {
     font-size: 2.5rem;
   }
+}
+
+.testimonials {
+  padding: 4rem 2rem;
+  background-color: var(--card-background);
+}
+
+.testimonials h2 {
+  font-family: 'Amita', serif;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.testimonial {
+  background-color: var(--background-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial .author {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Add styles for the product filter */
+.product-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.filter-button {
+  background-color: var(--tag-background);
+  color: var(--tag-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
