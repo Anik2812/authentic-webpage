@@ -1,18 +1,18 @@
 :root {
-  --primary-color: #E63946;
-  --secondary-color: #457B9D;
-  --accent-color: #F1FAEE;
+  --primary-color: #c45861;
+  --secondary-color: #002028;
+  --accent-color: #ECC8AF;
   --text-color: #1D3557;
   --background-color: #FFFFFF;
-  --card-background: #F1FAEE;
+  --card-background: #ECC8AF;
   --tag-background: #A8DADC;
   --tag-text: #1D3557;
 }
 
 body.dark-mode {
-  --primary-color: #DB6058;
-  --secondary-color: #457B9D;
-  --accent-color: #F1FAEE;
+  --primary-color: #002028;
+  --secondary-color: #FFFFFF;
+  --accent-color: #DB6058;
   --text-color: #F7FFF7;
   --background-color: #2C3E50;
   --card-background: #34495E;
@@ -176,7 +176,7 @@ nav ul li a:hover {
   margin-bottom: 2rem;
 }
 
-.cta-button {
+/* .cta-button {
   display: inline-block;
   background-color: var(--primary-color);
   color: var(--accent-color);
@@ -185,12 +185,12 @@ nav ul li a:hover {
   font-size: 1.2rem;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.3s ease;
-}
+} */
 
-.cta-button:hover {
+/* .cta-button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
-}
+} */
 
 .featured-products {
   padding: 4rem 2rem;
@@ -353,45 +353,33 @@ nav ul li a:hover {
 .about-india {
   background-color: var(--card-background);
   padding: 4rem 2rem;
+  margin: 4rem 0;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-.about-content {
+.about-text {
   flex-basis: 50%;
 }
 
-.about-content h2 {
+.about-text h2 {
   font-family: 'Amita', serif;
   font-size: 3rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
 }
 
-.about-content p {
+.about-text p {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-}
-
-.learn-more {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: var(--accent-color);
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.learn-more:hover {
-  background-color: var(--primary-color);
-  transform: translateY(-3px);
 }
 
 .about-image {
@@ -499,8 +487,16 @@ footer {
     flex-direction: column;
   }
 
-  .about-content, .about-image {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-text, .about-image {
     flex-basis: 100%;
+  }
+
+  .testimonial {
+    max-width: 100%;
   }
 }
 
@@ -513,10 +509,10 @@ footer {
     font-size: 1rem;
   }
 
-  .cta-button {
+  /* .cta-button {
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
-  }
+  } */
 
   .featured-products h2 {
     font-size: 2.5rem;
@@ -525,7 +521,8 @@ footer {
 
 .testimonials {
   padding: 4rem 2rem;
-  background-color: var(--card-background);
+  background-color: var(--background-color);
+  margin: 4rem 0;
 }
 
 .testimonials h2 {
@@ -541,13 +538,15 @@ footer {
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .testimonial {
-  background-color: var(--background-color);
+  background-color: var(--card-background);
   border-radius: 1rem;
   padding: 2rem;
-  max-width: 300px;
+  max-width: 350px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
@@ -588,6 +587,23 @@ footer {
 .filter-button.active {
   background-color: var(--primary-color);
   color: var(--accent-color);
+}
+
+.cta-button, .learn-more, .filter-button, .newsletter button {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover, .learn-more:hover, .filter-button:hover, .newsletter button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
 }
 
 .categories {
@@ -684,4 +700,19 @@ footer {
 .artisan-info p {
   color: var(--secondary-color);
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artisan-slider {
+    flex-direction: column;
+  }
+
+  .artisan-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }
