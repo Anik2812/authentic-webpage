@@ -26,8 +26,13 @@ body.dark-mode {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Penshurst", serif;
+  src: url('./penshurst/PENSHURS.TTF');
+}
+
 body {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Penshurst', sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   transition: background-color 0.5s ease, color 0.5s ease;
@@ -77,7 +82,7 @@ nav ul li {
 }
 
 nav ul li a {
-  font-family: 'Amita', serif;
+  font-family: "Penshurst", serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--accent-color);
@@ -165,7 +170,7 @@ nav ul li a:hover {
 }
 
 .hero-content h1 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   font-size: 3.5rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -199,7 +204,7 @@ nav ul li a:hover {
 }
 
 .featured-products h2 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -318,7 +323,7 @@ nav ul li a:hover {
 }
 
 .content h3 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   text-transform: capitalize;
   font-size: 1.8rem;
   color: var(--secondary-color);
@@ -370,7 +375,7 @@ nav ul li a:hover {
 }
 
 .about-text h2 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   font-size: 3rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
@@ -413,7 +418,7 @@ footer {
 }
 
 .footer-section h3 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
@@ -526,7 +531,7 @@ footer {
 }
 
 .testimonials h2 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -612,7 +617,7 @@ footer {
 }
 
 .categories h2 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -646,7 +651,7 @@ footer {
 .category-item h3 {
   padding: 1rem;
   text-align: center;
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   color: var(--text-color);
 }
 
@@ -657,7 +662,7 @@ footer {
 }
 
 .artisans h2 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -692,7 +697,7 @@ footer {
 }
 
 .artisan-info h3 {
-  font-family: 'Amita', serif;
+  font-family: 'PENSHURS', serif;
   color: var(--text-color);
   margin-bottom: 0.5rem;
 }
