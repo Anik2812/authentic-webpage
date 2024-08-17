@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const testimonialContainer = document.querySelector('.testimonial-container');
   const categoryGrid = document.querySelector('.category-grid');
   const artisanSlider = document.querySelector('.artisan-slider');
+  const searchIcon = document.querySelector('.search-icon');
+  const searchModal = document.getElementById('searchModal');
+  const closeSearchModal = document.querySelector('.close');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
 
   // Theme toggle
   themeToggle.addEventListener('click', () => {
@@ -110,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <img src="${product.image}" alt="${product.name}">
             </div>
             <div class="icon">
-              <a href="#" class="iconBox"> <span class="material-symbols-outlined">arrow_outward</span></a>
+              <a href="#" class="iconBox"> <span class="material-symbols-outlined">add_shopping_cart</span></a>
             </div>
           </div>
         </div>
@@ -118,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>${product.name}</h3>
           <p>${product.price}</p>
           <ul>
-            ${product.tags.map(tag => `<li style="--clr-tag:#C34729;" class="${tag}">${tag}</li>`).join('')}
+            ${product.tags.map(tag => `<li>${tag}</li>`).join('')}
           </ul>
         </div>
       </div>
@@ -132,16 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
   loadProducts();
 
   // Product filtering
-  const filterButtons = `
-    <div class="product-filter">
-      <button class="filter-button active" data-filter="all">All</button>
-      <button class="filter-button" data-filter="home">Home</button>
-      <button class="filter-button" data-filter="fashion">Fashion</button>
-      <button class="filter-button" data-filter="lifestyle">Lifestyle</button>
-    </div>
-  `;
+  const categories = ['all', ...new Set(products.map(product => product.category))];
+  const filterButtons = categories.map(category => 
+    `<button class="filter-button${category === 'all' ? ' active' : ''}" data-filter="${category}">${category.charAt(0).toUpperCase() + category.slice(1)}</button>`
+  ).join('');
 
-  productContainer.insertAdjacentHTML('beforebegin', filterButtons);
+  document.getElementById('productFilter').innerHTML = filterButtons;
 
   const filterBtns = document.querySelectorAll('.filter-button');
   filterBtns.forEach(btn => {
@@ -164,15 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const testimonials = [
     {
       text: "The quality of the handcrafted items I received is outstanding. Truly a piece of India in my home!",
-      author: "this"
+      author: "Sarah Johnson"
     },
     {
       text: "I'm impressed by the authenticity and craftsmanship of every product. Authentic India is my go-to for unique gifts.",
-      author: "that"
+      author: "Michael Chen"
     },
     {
       text: "The customer service is excellent, and the products arrived beautifully packaged. Highly recommended!",
-      author: "yes"
+      author: "Priya Patel"
     }
   ];
 
@@ -192,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadTestimonials();
 
   // Dynamic category loading
-  const categories = [
+  const categoriesData = [
     { name: "Home Decor", image: "https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
     { name: "Fashion", image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" },
     { name: "Jewelry", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" },
@@ -209,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function loadCategories() {
-    categoryGrid.innerHTML = categories.map(createCategoryCard).join('');
+    categoryGrid.innerHTML = categoriesData.map(createCategoryCard).join('');
   }
 
   loadCategories();
@@ -253,6 +254,39 @@ document.addEventListener('DOMContentLoaded', () => {
       cartCount.classList.add('added');
       setTimeout(() => cartCount.classList.remove('added'), 300);
     }
+  });
+
+  // Search functionality
+  searchIcon.addEventListener('click', () => {
+    searchModal.style.display = 'block';
+  });
+
+  closeSearchModal.addEventListener('click', () => {
+    searchModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === searchModal) {
+      searchModal.style.display = 'none';
+    }
+  });
+
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredProducts = products.filter(product => 
+      product.name.toLowerCase().includes(searchTerm) ||
+      product.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+    );
+
+    searchResults.innerHTML = filteredProducts.map(product => `
+      <div class="search-result">
+        <img src="${product.image}" alt="${product.name}" width="50">
+        <div>
+          <h4>${product.name}</h4>
+          <p>${product.price}</p>
+        </div>
+      </div>
+    `).join('');
   });
 
   // Lazy loading images
