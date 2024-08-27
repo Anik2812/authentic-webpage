@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-Regular.eot');
+    src: local('Breton Regular'), local('Breton-Regular'),
+        url('Breton-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Regular.woff2') format('woff2'),
+        url('Breton-Regular.woff') format('woff'),
+        url('Breton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton SemiBold It';
+    src: url('Breton-SemiBoldIt.eot');
+    src: local('Breton SemiBold It'), local('Breton-SemiBoldIt'),
+        url('Breton-SemiBoldIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-SemiBoldIt.woff2') format('woff2'),
+        url('Breton-SemiBoldIt.woff') format('woff'),
+        url('Breton-SemiBoldIt.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton It';
+    src: url('Breton-RegularIt.eot');
+    src: local('Breton Regular It'), local('Breton-RegularIt'),
+        url('Breton-RegularIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-RegularIt.woff2') format('woff2'),
+        url('Breton-RegularIt.woff') format('woff'),
+        url('Breton-RegularIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton Light It';
+    src: url('Breton-LightIt.eot');
+    src: local('Breton Light It'), local('Breton-LightIt'),
+        url('Breton-LightIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-LightIt.woff2') format('woff2'),
+        url('Breton-LightIt.woff') format('woff'),
+        url('Breton-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton Hair';
+    src: url('Breton-Hair.eot');
+    src: local('Breton Hair'), local('Breton-Hair'),
+        url('Breton-Hair.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Hair.woff2') format('woff2'),
+        url('Breton-Hair.woff') format('woff'),
+        url('Breton-Hair.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton Medium It';
+    src: url('Breton-MediumIt.eot');
+    src: local('Breton Medium It'), local('Breton-MediumIt'),
+        url('Breton-MediumIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-MediumIt.woff2') format('woff2'),
+        url('Breton-MediumIt.woff') format('woff'),
+        url('Breton-MediumIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-UltraLight.eot');
+    src: local('Breton UltraLight'), local('Breton-UltraLight'),
+        url('Breton-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('Breton-UltraLight.woff2') format('woff2'),
+        url('Breton-UltraLight.woff') format('woff'),
+        url('Breton-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton UltraLight It';
+    src: url('Breton-UltraLightIt.eot');
+    src: local('Breton UltraLight It'), local('Breton-UltraLightIt'),
+        url('Breton-UltraLightIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-UltraLightIt.woff2') format('woff2'),
+        url('Breton-UltraLightIt.woff') format('woff'),
+        url('Breton-UltraLightIt.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-SemiBold.eot');
+    src: local('Breton SemiBold'), local('Breton-SemiBold'),
+        url('Breton-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Breton-SemiBold.woff2') format('woff2'),
+        url('Breton-SemiBold.woff') format('woff'),
+        url('Breton-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton Book';
+    src: url('Breton-Book.eot');
+    src: local('Breton Book'), local('Breton-Book'),
+        url('Breton-Book.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Book.woff2') format('woff2'),
+        url('Breton-Book.woff') format('woff'),
+        url('Breton-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton Bold It';
+    src: url('Breton-BoldIt.eot');
+    src: local('Breton Bold It'), local('Breton-BoldIt'),
+        url('Breton-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-BoldIt.woff2') format('woff2'),
+        url('Breton-BoldIt.woff') format('woff'),
+        url('Breton-BoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-Black.eot');
+    src: local('Breton Black'), local('Breton-Black'),
+        url('Breton-Black.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Black.woff2') format('woff2'),
+        url('Breton-Black.woff') format('woff'),
+        url('Breton-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton Black It';
+    src: url('Breton-BlackIt.eot');
+    src: local('Breton Black It'), local('Breton-BlackIt'),
+        url('Breton-BlackIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-BlackIt.woff2') format('woff2'),
+        url('Breton-BlackIt.woff') format('woff'),
+        url('Breton-BlackIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton Book It';
+    src: url('Breton-BookIt.eot');
+    src: local('Breton Book It'), local('Breton-BookIt'),
+        url('Breton-BookIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-BookIt.woff2') format('woff2'),
+        url('Breton-BookIt.woff') format('woff'),
+        url('Breton-BookIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-Bold.eot');
+    src: local('Breton Bold'), local('Breton-Bold'),
+        url('Breton-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Bold.woff2') format('woff2'),
+        url('Breton-Bold.woff') format('woff'),
+        url('Breton-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-Medium.eot');
+    src: local('Breton Medium'), local('Breton-Medium'),
+        url('Breton-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Medium.woff2') format('woff2'),
+        url('Breton-Medium.woff') format('woff'),
+        url('Breton-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton Hair It';
+    src: url('Breton-HairIt.eot');
+    src: local('Breton Hair It'), local('Breton-HairIt'),
+        url('Breton-HairIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-HairIt.woff2') format('woff2'),
+        url('Breton-HairIt.woff') format('woff'),
+        url('Breton-HairIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-Light.eot');
+    src: local('Breton Light'), local('Breton-Light'),
+        url('Breton-Light.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Light.woff2') format('woff2'),
+        url('Breton-Light.woff') format('woff'),
+        url('Breton-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Breton Thin It';
+    src: url('Breton-ThinIt.eot');
+    src: local('Breton Thin It'), local('Breton-ThinIt'),
+        url('Breton-ThinIt.eot?#iefix') format('embedded-opentype'),
+        url('Breton-ThinIt.woff2') format('woff2'),
+        url('Breton-ThinIt.woff') format('woff'),
+        url('Breton-ThinIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Breton';
+    src: url('Breton-Thin.eot');
+    src: local('Breton Thin'), local('Breton-Thin'),
+        url('Breton-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Breton-Thin.woff2') format('woff2'),
+        url('Breton-Thin.woff') format('woff'),
+        url('Breton-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
